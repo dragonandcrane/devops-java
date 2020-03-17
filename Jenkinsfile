@@ -30,9 +30,7 @@ pipeline {
                     sh '''
                         # login to docker registry
                         $(aws ecr get-login --no-include-email)
-                        REPO=${AWS_ACCOUNT}.dkr.ecr.${AWS_REGION}.amazonaws.com/${COMPONENT}
-                        docker build . -t ${REPO}
-                        docker push $REPO
+                        make clean test push
                     '''
                     }
             }
