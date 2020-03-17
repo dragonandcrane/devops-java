@@ -10,7 +10,7 @@ clean:
 build:
 	mvn --batch-mode package
 
-tomcat: build
+serve: build
 	mvn --batch-mode tomcat:run
 
 image: build
