@@ -30,7 +30,7 @@ pipeline {
                     sh '''
                         # login to docker registry
                         $(aws ecr get-login --no-include-email)
-                        make clean test push
+                        make clean push
                     '''
                     }
             }
